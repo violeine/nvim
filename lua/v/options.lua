@@ -38,6 +38,8 @@ local options = {
 	-- wrap text
 	linebreak = true,	
 	colorcolumn = {80},
+  --completion
+  completeopt = {"menuone", "noselect"}
 }
 
 for k, v in pairs(options) do
@@ -52,3 +54,11 @@ vim.opt.path:append ".,**"
 
 cmd [[filetype plugin indent on]] --enable filetype plugin and indent
 cmd [[set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·]]
+cmd [[
+  augroup options
+  autocmd!
+  autocmd  BufWinEnter * set formatoptions-=cro
+  autocmd VimResized * tabdo wincmd = 
+  augroup end
+]]
+
