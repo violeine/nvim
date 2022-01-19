@@ -17,7 +17,7 @@ local options = {
 	--Responsive
 	updatetime = 200,
 	lazyredraw = true,
-	ttimeout = true, --terminal 
+	ttimeout = true, --terminal
 	ttimeoutlen = 10, --terminal
 	-- search
 	wildignorecase = true,
@@ -32,11 +32,11 @@ local options = {
 	splitbelow = true,
 	splitright = true,
 	-- indent :h tabstop option 2
-	tabstop = 2, 
+	tabstop = 2,
 	shiftwidth = 2,
 	expandtab = true,
 	-- wrap text
-	linebreak = true,	
+	linebreak = true,
 	colorcolumn = {80},
   --completion
   completeopt = {"menuone", "noselect"}
@@ -58,7 +58,7 @@ cmd [[
   augroup options
   autocmd!
   autocmd  BufWinEnter * set formatoptions-=cro
-  autocmd VimResized * tabdo wincmd = 
+  autocmd VimResized * tabdo wincmd =
+  autocmd BufWritePre * %s/\s\+$//e
   augroup end
 ]]
-

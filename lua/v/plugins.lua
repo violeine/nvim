@@ -2,11 +2,11 @@ local fn = vim.fn
 local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
 
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({"git", 
-  "clone", 
-  "--depth", 
-  "1", 
-  "https://github.com/wbthomason/packer.nvim", 
+  packer_bootstrap = fn.system({"git",
+  "clone",
+  "--depth",
+  "1",
+  "https://github.com/wbthomason/packer.nvim",
   install_path})
 end
 
@@ -54,6 +54,7 @@ return require("packer").startup(function(use)
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets" -- a bunch of snippets to use
   }
+
   -- LSP
   use {
     "neovim/nvim-lspconfig",
@@ -67,6 +68,13 @@ return require("packer").startup(function(use)
   requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  -- Treesitter
+  use {
+    { "nvim-treesitter/nvim-treesitter",
+      run = ":TSUpdate"
+    },
+    "nvim-treesitter/playground"
+  }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
