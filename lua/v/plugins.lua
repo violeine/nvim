@@ -29,7 +29,15 @@ return require("packer").startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/plenary.nvim" -- Useful lua functions used in lots of plugins
   use "nvim-lua/popup.nvim" --Popup API
-  use "windwp/nvim-autopairs" -- auto pairs
+  use {
+    "windwp/nvim-autopairs",
+    {
+      "mattn/emmet-vim",
+      config = function ()
+        vim.g.user_emmet_leader_key='<C-s>'
+      end
+    }
+  } -- auto pairs
   use {
     "rose-pine/neovim",
     as = "rose-pine",
