@@ -28,7 +28,7 @@ vim.cmd [[
   augroup keymap
   autocmd!
   autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR> 
-  autocmd CmdwinEnter * nnoremap <buffer> <esc><esc> :q<cr> 
+  autocmd CmdwinEnter * nnoremap <buffer> <esc><esc> :close<cr> 
 ]] --quit thing easily
 
 --Stay in indent mode

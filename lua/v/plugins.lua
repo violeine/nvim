@@ -61,6 +61,12 @@ return require("packer").startup(function(use)
     "b0o/SchemaStore.nvim" --JSON schema for jsonls
   }
 
+  -- Telescope
+  use {
+  'nvim-telescope/telescope.nvim',
+  requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
