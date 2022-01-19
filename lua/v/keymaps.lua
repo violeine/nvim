@@ -3,7 +3,6 @@ local expr_opts = {silent = true, expr = true}
 
 local map=vim.keymap.set
 
-map("","<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 
 vim.g.maplocalleader = ","
@@ -35,11 +34,6 @@ vim.cmd [[
 --Stay in indent mode
 map("v", "<", "<gv", opts)
 map("v", ">", ">gv", opts)
-
-
-
-
-
 
 
 

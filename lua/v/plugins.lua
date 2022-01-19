@@ -36,9 +36,22 @@ return require("packer").startup(function(use)
         vim.cmd "colorscheme rose-pine"
     end
   }
+  -- Tpope stuff
   use {
     "tpope/vim-surround",
     "tpope/vim-unimpaired",
+  }
+  -- completion and snippet
+  use {
+    "hrsh7th/nvim-cmp",
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
+    "hrsh7th/cmp-cmdline",
+    --snippet
+    "L3MON4D3/LuaSnip",
+    "saadparwaiz1/cmp_luasnip",
+    "rafamadriz/friendly-snippets" -- a bunch of snippets to use
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
