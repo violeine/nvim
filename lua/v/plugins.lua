@@ -45,6 +45,7 @@ return require("packer").startup(function(use)
   use {
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-nvim-lua",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-cmdline",
@@ -52,6 +53,12 @@ return require("packer").startup(function(use)
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  }
+  -- LSP
+  use {
+    "neovim/nvim-lspconfig",
+    "williamboman/nvim-lsp-installer",
+    "b0o/SchemaStore.nvim" --JSON schema for jsonls
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
