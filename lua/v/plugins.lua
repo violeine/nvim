@@ -59,9 +59,22 @@ return require("packer").startup(function(use)
       vim.cmd "colorscheme rose-pine"
     end,
   }
-  -- UX enhance
+  -- UI/UX enhance
   use {
     "tpope/vim-unimpaired",
+    "rebelot/heirline.nvim", --status line
+    {
+      "kyazdani42/nvim-web-devicons",
+      config = function()
+        require("nvim-web-devicons").setup()
+      end,
+    },
+    {
+      "norcalli/nvim-colorizer.lua",
+      config = function()
+        require("colorizer").setup()
+      end,
+    },
   }
   -- completion and snippet
   use {
