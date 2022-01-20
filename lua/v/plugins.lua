@@ -1,13 +1,15 @@
 local fn = vim.fn
-local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
+local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({"git",
-  "clone",
-  "--depth",
-  "1",
-  "https://github.com/wbthomason/packer.nvim",
-  install_path})
+  packer_bootstrap = fn.system {
+    "git",
+    "clone",
+    "--depth",
+    "1",
+    "https://github.com/wbthomason/packer.nvim",
+    install_path,
+  }
 end
 
 -- Auto reload when added things to this file
@@ -36,26 +38,26 @@ return require("packer").startup(function(use)
     "windwp/nvim-autopairs", -- auto pairs
     {
       "mattn/emmet-vim",
-      config = function ()
-        vim.g.user_emmet_leader_key="<C-s>"
-      end
+      config = function()
+        vim.g.user_emmet_leader_key = "<C-s>"
+      end,
     },
     "windwp/nvim-ts-autotag",
-   {
-    "numToStr/Comment.nvim",
-    config = function ()
-      require('v.comment')
-    end
-  },
-  "JoosepAlviste/nvim-ts-context-commentstring"
+    {
+      "numToStr/Comment.nvim",
+      config = function()
+        require "v.comment"
+      end,
+    },
+    "JoosepAlviste/nvim-ts-context-commentstring",
   }
   -- scheme
   use {
     "rose-pine/neovim",
     as = "rose-pine",
     config = function()
-        vim.cmd "colorscheme rose-pine"
-    end
+      vim.cmd "colorscheme rose-pine"
+    end,
   }
   -- UX enhance
   use {
@@ -72,7 +74,7 @@ return require("packer").startup(function(use)
     --snippet
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
-    "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+    "rafamadriz/friendly-snippets", -- a bunch of snippets to use
   }
 
   -- LSP
@@ -80,37 +82,41 @@ return require("packer").startup(function(use)
     "neovim/nvim-lspconfig",
     "williamboman/nvim-lsp-installer",
     "b0o/SchemaStore.nvim", --JSON schema for jsonls
-    {"jose-elias-alvarez/null-ls.nvim",
-      config = function() require "v.lsp.null-ls" end
-    } --linting and formatting
+    {
+      "jose-elias-alvarez/null-ls.nvim",
+      config = function()
+        require "v.lsp.null-ls"
+      end,
+    }, --linting and formatting
   }
 
   -- Telescope
   use {
     {
-    "nvim-telescope/telescope.nvim",
-    requires = "nvim-lua/plenary.nvim"
-  },
-  "nvim-telescope/telescope-file-browser.nvim"
+      "nvim-telescope/telescope.nvim",
+      requires = "nvim-lua/plenary.nvim",
+    },
+    "nvim-telescope/telescope-file-browser.nvim",
   }
 
   -- Treesitter
   use {
-    { "nvim-treesitter/nvim-treesitter",
-      run = ":TSUpdate"
-    },
-    "nvim-treesitter/playground"
+    { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
+    "nvim-treesitter/playground",
   }
 
   -- Git
   use {
-    'lewis6991/gitsigns.nvim',
+    {
+      "lewis6991/gitsigns.nvim",
       requires = {
-        'nvim-lua/plenary.nvim'
+        "nvim-lua/plenary.nvim",
       },
-      config = function ()
+      config = function()
         require "v.gitsigns"
-      end
+      end,
+    },
+    "tpope/vim-fugitive",
   }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
@@ -118,4 +124,3 @@ return require("packer").startup(function(use)
     require("packer").sync()
   end
 end)
-
