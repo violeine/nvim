@@ -29,15 +29,27 @@ return require("packer").startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/plenary.nvim" -- Useful lua functions used in lots of plugins
   use "nvim-lua/popup.nvim" --Popup API
+
+  -- Editing
   use {
-    "windwp/nvim-autopairs",
+    "tpope/vim-surround",
+    "windwp/nvim-autopairs", -- auto pairs
     {
       "mattn/emmet-vim",
       config = function ()
         vim.g.user_emmet_leader_key="<C-s>"
       end
-    }
-  } -- auto pairs
+    },
+    "windwp/nvim-ts-autotag",
+   {
+    "numToStr/Comment.nvim",
+    config = function ()
+      require('v.comment')
+    end
+  },
+  "JoosepAlviste/nvim-ts-context-commentstring"
+  }
+  -- scheme
   use {
     "rose-pine/neovim",
     as = "rose-pine",
@@ -45,9 +57,8 @@ return require("packer").startup(function(use)
         vim.cmd "colorscheme rose-pine"
     end
   }
-  -- Tpope stuff
+  -- UX enhance
   use {
-    "tpope/vim-surround",
     "tpope/vim-unimpaired",
   }
   -- completion and snippet

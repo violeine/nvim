@@ -10,4 +10,6 @@ configs.setup {
 
   },
   indent = { enable = true, disable = { "yaml" } },
+  autotag = { enable = true },
+  context_commentstring = {enable = true, enable_autocmd = false}
 }
