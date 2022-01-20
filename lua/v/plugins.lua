@@ -79,7 +79,10 @@ return require("packer").startup(function(use)
   use {
     "neovim/nvim-lspconfig",
     "williamboman/nvim-lsp-installer",
-    "b0o/SchemaStore.nvim" --JSON schema for jsonls
+    "b0o/SchemaStore.nvim", --JSON schema for jsonls
+    {"jose-elias-alvarez/null-ls.nvim",
+      config = function() require "v.lsp.null-ls" end
+    } --linting and formatting
   }
 
   -- Telescope
