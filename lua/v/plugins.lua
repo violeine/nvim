@@ -18,7 +18,7 @@ vim.cmd [[
   augroup end
 ]]
 
--- Use a protected call so we don't error out on first use
+-- Use a protected call so we don"t error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
   return
@@ -34,7 +34,7 @@ return require("packer").startup(function(use)
     {
       "mattn/emmet-vim",
       config = function ()
-        vim.g.user_emmet_leader_key='<C-s>'
+        vim.g.user_emmet_leader_key="<C-s>"
       end
     }
   } -- auto pairs
@@ -73,8 +73,11 @@ return require("packer").startup(function(use)
 
   -- Telescope
   use {
-  'nvim-telescope/telescope.nvim',
-  requires = { {'nvim-lua/plenary.nvim'} }
+    {
+    "nvim-telescope/telescope.nvim",
+    requires = "nvim-lua/plenary.nvim"
+  },
+  "nvim-telescope/telescope-file-browser.nvim"
   }
 
   -- Treesitter

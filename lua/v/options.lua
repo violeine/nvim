@@ -1,9 +1,11 @@
 local cmd = vim.cmd
+
 local options = {
 	-- sanity
 	fileencoding = "utf-8",
 	clipboard = "unnamedplus",
 	mouse = "a",
+  swapfile = false,
 	--UI
 	number = true,
 	relativenumber = true,
