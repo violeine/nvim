@@ -70,7 +70,7 @@ local FileName = {
     end
 
     if not cond.width_percent_below(#filename, 0.25) then
-      filename = vim.fn.pathshoten(filename)
+      filename = vim.fn.pathshorten(filename)
     end
     return filename
   end,
