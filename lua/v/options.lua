@@ -44,6 +44,16 @@ local options = {
   colorcolumn = { 80 },
   --completion
   completeopt = { "menuone", "noselect" },
+  fillchars = {
+    vert = "▕", -- alternatives │
+    fold = " ",
+    eob = " ", -- suppress ~ at EndOfBuffer
+    diff = "╱", -- alternatives = ⣿ ░ ─
+    msgsep = "‾",
+    foldopen = "▾",
+    foldsep = "│",
+    foldclose = "▸",
+  },
 }
 
 for k, v in pairs(options) do

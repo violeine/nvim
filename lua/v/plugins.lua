@@ -78,6 +78,13 @@ return require("packer").startup(function(use)
         require("colorizer").setup()
       end,
     },
+    {
+      "kyazdani42/nvim-tree.lua",
+      requires = {
+        "kyazdani42/nvim-web-devicons", -- optional, for file icon
+      },
+      config = [[require "v.nvim-tree"]],
+    },
   }
   -- completion and snippet
   use {
