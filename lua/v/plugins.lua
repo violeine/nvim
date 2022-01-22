@@ -114,7 +114,10 @@ return require("packer").startup(function(use)
 
   -- Treesitter
   use {
-    { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
+    {
+      "nvim-treesitter/nvim-treesitter",
+      run = ":TSUpdate",
+    },
     "nvim-treesitter/playground",
   }
 
@@ -131,6 +134,9 @@ return require("packer").startup(function(use)
     },
     "tpope/vim-fugitive",
   }
+
+  -- neorg
+  use {}
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

@@ -3,9 +3,7 @@ local builtin = require "telescope.builtin"
 
 local map = vim.keymap.set
 local opts = { silent = true }
-local fb_actions = tele.extensions.file_browser.actions
 local actions = require "telescope.actions"
-local theme = require "telescope.themes"
 
 tele.setup {
   defaults = {
@@ -23,22 +21,7 @@ tele.setup {
       theme = "cursor",
     },
   },
-  extensions = {
-    file_browser = {
-      mappings = {
-        ["i"] = {
-          ["<C-r>"] = fb_actions.rename,
-          ["<C-n>"] = fb_actions.create,
-          ["<C-x>"] = fb_actions.move,
-          ["<C-y>"] = fb_actions.copy,
-          ["<C-d>"] = fb_actions.remove,
-          ["<C-w>"] = fb_actions.goto_cwd,
-          ["<C-j>"] = actions.move_selection_next,
-          ["<C-k>"] = actions.move_selection_previous,
-        },
-      },
-    },
-  },
+  extensions = {},
 }
 
 tele.load_extension "file_browser"
