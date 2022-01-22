@@ -20,6 +20,7 @@ local options = {
   --Responsive
   updatetime = 200,
   lazyredraw = true,
+  timeoutlen = 300,
   ttimeout = true, --terminal
   ttimeoutlen = 10, --terminal
   -- search
