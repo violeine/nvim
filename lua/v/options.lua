@@ -74,5 +74,9 @@ cmd [[
   autocmd  BufWinEnter * set formatoptions-=cro
   autocmd VimResized * tabdo wincmd =
   autocmd BufWritePre * %s/\s\+$//e
+  autocmd  BufReadPost *
+  \ if line("'\"") > 1 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
+  \ endif
   augroup end
 ]]
