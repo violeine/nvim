@@ -62,7 +62,10 @@ return require("packer").startup(function(use)
   -- UI/UX enhance
   use {
     "tpope/vim-unimpaired",
-    "rebelot/heirline.nvim", --status line
+    {
+      "rebelot/heirline.nvim", --status line
+      require = "rose-pine/neovim",
+    },
     {
       "kyazdani42/nvim-web-devicons",
       config = function()
@@ -134,9 +137,6 @@ return require("packer").startup(function(use)
     },
     "tpope/vim-fugitive",
   }
-
-  -- neorg
-  use {}
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

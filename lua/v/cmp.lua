@@ -117,7 +117,7 @@ cmp.setup {
     end,
   },
   sources = {
-    { name = "nvim_lsp", piority = 20 },
+    { name = "nvim_lsp" },
     { name = "nvim_lua" },
     { name = "luasnip" },
     { name = "buffer" },
