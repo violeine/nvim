@@ -64,7 +64,7 @@ vim.opt.shortmess:append "c"
 
 cmd [[set wildignore+="**/node_modules/**, **/.git/**"]]
 
-vim.opt.path:append ".,**"
+cmd [[set path+=".,**]]
 
 cmd [[filetype plugin indent on]] --enable filetype plugin and indent
 cmd [[set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·]]
