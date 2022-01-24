@@ -164,6 +164,7 @@ function M.setup()
     Space,
     { condition = cond.is_git_repo, Git },
   }
+
   local StatusLine = {
     hl = function()
       if cond.is_active() then
@@ -180,6 +181,7 @@ function M.setup()
     end,
     DefaultStatusline,
   }
+
   require("heirline").setup(StatusLine)
 end
 
