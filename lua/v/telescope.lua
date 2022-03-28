@@ -20,6 +20,9 @@ tele.setup {
     lsp_code_actions = {
       theme = "cursor",
     },
+    find_files = {
+      hidden = "true",
+    },
   },
   extensions = {},
 }

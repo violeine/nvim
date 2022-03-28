@@ -44,6 +44,8 @@ local options = {
   colorcolumn = { 80 },
   --completion
   completeopt = { "menuone", "noselect" },
+  foldmethod = "indent",
+  foldenable = false,
   fillchars = {
     vert = "▕", -- alternatives │
     fold = " ",
